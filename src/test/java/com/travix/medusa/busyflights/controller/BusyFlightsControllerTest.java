@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.travix.medusa.busyflights.domain.busyflights.BusyFlightsRequest;
+import org.apache.tomcat.jni.Local;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +37,11 @@ public class BusyFlightsControllerTest {
 
     @Test
     public void givenAValidFlightRequest_whenCallingFlightsEndpoint_shouldReturnResponse200OK() throws Exception {
-        BusyFlightsRequest busyFlightsRequest = new BusyFlightsRequest("LHR", "LAX", "", "", 4);
+        LocalDate departureDate = LocalDate.of(2020, 3, 1);
+        LocalDate returnDate = LocalDate.of(2020, 3, 14);
+
+        BusyFlightsRequest busyFlightsRequest = new BusyFlightsRequest("LHR", "LAX",
+                departureDate.toString(), returnDate.toString(), 4);
 
         Gson gson = new GsonBuilder().create();
         String json = gson.toJson(busyFlightsRequest);

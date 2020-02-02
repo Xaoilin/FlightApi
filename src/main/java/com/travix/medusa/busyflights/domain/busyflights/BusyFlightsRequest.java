@@ -6,7 +6,7 @@ public class BusyFlightsRequest {
 
     private String origin;
     private String destination;
-    private String departureDate; // Refactor to LocalDate for more accurate variable use
+    private String departureDate;
     private String returnDate;
     private int numberOfPassengers;
 
