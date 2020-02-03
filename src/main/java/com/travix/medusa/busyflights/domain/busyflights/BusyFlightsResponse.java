@@ -3,7 +3,6 @@ package com.travix.medusa.busyflights.domain.busyflights;
 import java.math.BigDecimal;
 import java.util.Date;
 
-// Java builder pattern to initialise the many variables in this class
 public class BusyFlightsResponse {
 
     private String airline;
@@ -11,45 +10,17 @@ public class BusyFlightsResponse {
     private BigDecimal fare;
     private String departureAirportCode;
     private String destinationAirportCode;
-    private Date departureDate;
-    private Date arrivalDate;
+    private String departureDate;
+    private String arrivalDate;
 
-    public BusyFlightsResponse() {
-    }
-
-    public BusyFlightsResponse setAirline(String airline) {
+    public BusyFlightsResponse(String airline, String supplier, BigDecimal fare, String departureAirportCode, String destinationAirportCode, String departureDate, String arrivalDate) {
         this.airline = airline;
-        return this;
-    }
-
-    public BusyFlightsResponse setSupplier(String supplier) {
         this.supplier = supplier;
-        return this;
-    }
-
-    public BusyFlightsResponse setFare(BigDecimal fare) {
         this.fare = fare;
-        return this;
-    }
-
-    public BusyFlightsResponse setDepartureAirportCode(String departureAirportCode) {
         this.departureAirportCode = departureAirportCode;
-        return this;
-    }
-
-    public BusyFlightsResponse setDestinationAirportCode(String destinationAirportCode) {
         this.destinationAirportCode = destinationAirportCode;
-        return this;
-    }
-
-    public BusyFlightsResponse setDepartureDate(Date departureDate) {
         this.departureDate = departureDate;
-        return this;
-    }
-
-    public BusyFlightsResponse setArrivalDate(Date arrivalDate) {
         this.arrivalDate = arrivalDate;
-        return this;
     }
 
     public String getAirline() {
@@ -72,11 +43,11 @@ public class BusyFlightsResponse {
         return destinationAirportCode;
     }
 
-    public Date getDepartureDate() {
+    public String getDepartureDate() {
         return departureDate;
     }
 
-    public Date getArrivalDate() {
+    public String getArrivalDate() {
         return arrivalDate;
     }
 }

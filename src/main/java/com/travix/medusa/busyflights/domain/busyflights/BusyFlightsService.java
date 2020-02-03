@@ -1,5 +1,7 @@
 package com.travix.medusa.busyflights.domain.busyflights;
 
+import java.util.List;
+
 public interface BusyFlightsService {
-    BusyFlightsResponse getAggregatedFlights(BusyFlightsRequest request);
+    List<BusyFlightsResponse> getAggregatedFlights(BusyFlightsRequest request);
 }

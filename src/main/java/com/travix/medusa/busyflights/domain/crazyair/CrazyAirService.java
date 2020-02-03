@@ -1,5 +1,7 @@
 package com.travix.medusa.busyflights.domain.crazyair;
 
+import java.util.List;
+
 public interface CrazyAirService {
-    CrazyAirResponse getAvailableFlights(CrazyAirRequest request);
+    List<CrazyAirResponse> getAvailableFlights(CrazyAirRequest request);
 }
